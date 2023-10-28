@@ -119,3 +119,49 @@ but babies are a little different. They are still people though so...what do we 
 
 So the baby class will automatically inherit every attribute of the person class, but we can add or modify more that are unique to baby'''
 
+class Person:
+    description = "general person"
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def speak(self):
+        print("My name is {} and I am {} years old".format(self.name, self.age))
+
+    def eat(self, food):
+        print("{} eats {}".format(self.name, food))
+
+    def action(self):
+        print("{} spins around !".format(self.name))
+
+# here is the syntax. Now the Baby class has all the attributes of a Person by default unless we change them (like we do description and speak), 
+#     and we can add more like nap
+#     Also, if we change the action function in Person, it will change in Baby too!
+'''Baby is a "Child" class or also known as a "derived" class'''
+class Baby(Person):
+    description = "baby"
+
+    def speak(self):
+        print("ba ba ba ba")
+
+    def nap(self):
+        print("{} takes a nap".format(self.name))
+
+
+person1 = Person("Steve", 20)
+
+person1.speak()
+person1.eat("pasta")
+person1.action()
+
+baby = Baby("Ian", 1)
+baby.speak()
+baby.eat("Baby food")
+baby.action()
+
+print(person1.description)
+print(baby.description)
+
+# Only baby has access to the nap method. 
+baby.nap()
