@@ -1,0 +1,15 @@
+{% extends 'users/base.html' %}
+{% block content %}
+
+<h2>Register</h2>
+
+<!--Here we had to make the form ourself instead of letting django do it-->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value = "Register">
+</form>
+
+<a href="{% url 'login' %}">Back to Login</a>
+
+{% endblock %}
