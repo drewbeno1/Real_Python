@@ -101,17 +101,20 @@ class Greeter:
 
 '''Objct creation with .__new__()'''
 
-# Custome __new__() methods are rarely used, but can be useful in some cases
+# Custom __new__() methods are rarely used, but can be useful in some cases
 # it allows you to customize the object creation process by returning an object of a different class which means you can create objects of immutable classes
 
 ## Honestly dont get this concept yet
 
-class SomeClass:
+class SomeClass():
     # args and kwargs allow for an arbitrary number of arguments
-    # cls is the class that is being instantiated
+    # cls is a call back to the parent class which in this case is SomeClass
     def __new__(cls, *args, **kwargs):
         instance = super().__new__(cls)
         # customize your instanc in the blank space here and then return it
 
         return instance
 
+
+
+'''Class Attributes and Instance Attributes'''

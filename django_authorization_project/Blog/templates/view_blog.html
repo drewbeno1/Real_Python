@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    project
+{% endblock %}
+
+{% block content %}
+<h1>{{ blog.title }}</h1>
+
+<div class="container">
+    {{ blog.content|safe }}
+</div>
+
+<hr/>
+
+<a href = "{% url 'listing' %}">All Blogs</a>
+
+{% endblock content %}

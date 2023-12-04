@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse 
 from users.forms import CustomUserCreationForm
 
+def home(request):
+    return render(request, "users/home.html")
 
 # Create your views here.
 def dashboard(request):
